@@ -2,9 +2,9 @@ class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
     set<int>s;
-    for(auto u:nums)
+    for(auto a:nums)
     {
-        s.insert(u);
+        s.insert(a);
     }
     return (s.size()!=nums.size());    
     }
