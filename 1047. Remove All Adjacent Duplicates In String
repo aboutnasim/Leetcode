@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string removeDuplicates(string s) {
+        stack<int> st;
+
+        for(auto u:s)
+        {
+            if(!st.empty())
+            {
+                if(st.top()==u) st.pop();
+                else st.push(u);
+            }
+            else st.push(u);
+        }
+
+        s.clear();
+
+        while(!st.empty())
+        {
+            s+= st.top();
+            st.pop();
+        }
+        reverse(s.begin(), s.end());
+        return s;
+    }
+};
